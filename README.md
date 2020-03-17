@@ -27,7 +27,7 @@ Your users should be able to:
 The categories are:
 
 - Role: Frontend, Backend, Fullstack
-- Level: Junior, Midnight, Senior
+- Level: Junior, Midweight, Senior
 - Languages: Python, Ruby, JavaScript, HTML, CSS
 - Tools: React, Sass, Vue, Django, RoR (Ruby on Rails)
 
