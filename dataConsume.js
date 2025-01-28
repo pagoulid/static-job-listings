@@ -156,7 +156,8 @@ data.forEach((element)=>{
     
 
 
-    var parent = document.getElementById('item_list');
+    //var parent = document.getElementById('item_list');
+    var parent = document.getElementById('jobs-container');
     
     var div = document.createElement("div");
     
