@@ -153,17 +153,12 @@ var data = [
 
 
 data.forEach((element)=>{
-    
 
-
-    var parent = document.getElementById('item_list');
-    
+    var parent = document.getElementById('jobs-container');
     var div = document.createElement("div");
-    
     CreateGrid(div,element);
-
-
     parent.appendChild(div);
+
 });
 
 function CreateGrid(div,element){
@@ -174,35 +169,21 @@ function CreateGrid(div,element){
         "width":"80%",
         "height":"20%",
         "box-shadow": "0.5px 0.5px 5px 0.2px black",
-        
         "border-left": "6px solid  hsl(180, 8%, 52%)",
-    
         "margin":"inherit"
     }
     
-
-
-
-   
-
- /*IMG*/
+    /*IMG*/
     var div1 = getLogo(element.logo);
     
- /*IMG*/ 
-
- /*company new feature list*/ 
-
+    /*company new feature list*/ 
     var div2 = getTopList(element.company,element.new,element.featured); 
    
-/*Position*/ 
+    /*Position*/ 
     var div3=getPos(element.position);
 
-/*PostedAt contract location */ 
+    /*PostedAt contract location */ 
     var arr = [element.postedAt,element.contract,element.location];
-
-    
-
-    
     var div4 =getList(arr,{
         "list-style":"none",
         "padding-left":"0",
@@ -231,13 +212,7 @@ function CreateGrid(div,element){
                             "background-color":"hsl(180, 31%, 95%)"
 
                 });
-
-
-
-
-
-
-    
+  
 
     var styles1 = {
         "grid-row-start": "row2-start",
@@ -259,8 +234,6 @@ function CreateGrid(div,element){
     };
 
     let styles5;
-     
-    
     if(window.innerWidth<=800){
         styles5= {"grid-row-start": "row2-start",
       "grid-column-start": "column2-start",
@@ -312,29 +285,23 @@ function getLogo(logo){
 
 function getTopList(company,Ifnew,Iffeatured){
 
-    /*styles*/
     var ul_styles ={
         "list-style":"none",
         "padding-left":"0",
-        
+        "display":"flex",
+        "flex-wrap":"wrap",
+        "gap":"0.25rem",   
     };
-
-   
 
     var comp_li_styles ={
         "display":"inline-block",
-        "padding-left":"8px",
         "color":"hsl(180, 8%, 52%)",
         "font-weight":"bold"
 
     };
-    /*styles*/ 
+
     var Topdiv = document.createElement("div");
-    
     var ul=document.createElement("UL");
-
-    
-
     var company_list = getListElement(company,comp_li_styles);
 
     /* If new and featured */
@@ -344,14 +311,12 @@ function getTopList(company,Ifnew,Iffeatured){
     if(Ifnew){
         var new_li_styles ={
             "display":"inline-block",
-            "margin-left":"8px",
-            "padding-left":"10px",
+            "padding":"2px 5px",
             "color":"white",
             "background-color":"hsl(180, 8%, 52%)",
             "width":"3rem",
-            "border-radius":"9px"
-
-    
+            "border-radius":"15px",
+            "text-align":"center"
         };
 
         nbool=true;
@@ -363,15 +328,14 @@ function getTopList(company,Ifnew,Iffeatured){
 
         var feat_li_styles ={
             "display":"inline-block",
-            "margin-left":"8px",
-            "padding-left":"10px",
+            "padding":"2px 5px",
             "color":"white",
             "background-color":"black",
             "width":"6rem",
-            "border-radius":"9px"
-
-    
+            "border-radius":"15px",
+            "text-align":"center"
         };
+
         fbool=true;
         var featured_list = getListElement("FEATURED",feat_li_styles);
 
@@ -380,16 +344,12 @@ function getTopList(company,Ifnew,Iffeatured){
     /* If new and featured */
 
     Object.assign(ul.style,ul_styles);
-
     ul.appendChild(company_list);
     if(nbool){ul.appendChild(new_list);}
     if(fbool){ul.appendChild(featured_list);}
-
     Topdiv.appendChild(ul);
 
     return Topdiv;
-
-
 }
 
 function getPos(position){
@@ -399,10 +359,9 @@ function getPos(position){
     }
     var pos_div = document.createElement("div");
     var text = document.createTextNode(position);
-    
     pos_div.appendChild(text);
-
     Object.assign(pos_div.style,pos_styles);
+
     return pos_div;
 
 }
@@ -411,11 +370,6 @@ function getList(array,ul_styles,li_styles){
 
     var Bottom_div=document.createElement("div");
     var ul=document.createElement("UL");
-
-
-
-   
-
     Object.assign(ul.style,ul_styles);
 
     for(item of array){
@@ -423,15 +377,11 @@ function getList(array,ul_styles,li_styles){
         var text = document.createTextNode(item);
         list_element.appendChild(text);
         Object.assign(list_element.style,li_styles);
-
         ul.appendChild(list_element);
-  
     }
-
     Bottom_div.appendChild(ul);
+
     return Bottom_div;
-
-
 
 }
 
@@ -441,24 +391,20 @@ function getListElement(text,styles){
     var list = document.createElement("li");
     var textNode = document.createTextNode(text);
     list.appendChild(textNode);
-
     Object.assign(list.style,styles);
 
     return list;
 
-
 }
 
 function changeOnResize(element,Lstyle,Gstyle,onWidth){
+
     var styles;
-    
     if(window.innerWidth<=onWidth){
         styles= Lstyle;
-
     }else{
       styles= Gstyle;
     }
-
     Object.assign(element.style,styles);
 }
 
