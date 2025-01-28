@@ -314,9 +314,17 @@ function getLogo(logo){
 function getTopList(company,Ifnew,Iffeatured){
 
     /*styles*/
+    /*var ul_styles ={
+        "list-style":"none",
+        "padding-left":"0",
+        
+    };*/
     var ul_styles ={
         "list-style":"none",
         "padding-left":"0",
+        "display":"flex",
+        "flex-wrap":"wrap",
+        "gap":"0.25rem",
         
     };
 
@@ -324,7 +332,7 @@ function getTopList(company,Ifnew,Iffeatured){
 
     var comp_li_styles ={
         "display":"inline-block",
-        "padding-left":"8px",
+        /*"padding-left":"8px",*/
         "color":"hsl(180, 8%, 52%)",
         "font-weight":"bold"
 
@@ -345,12 +353,15 @@ function getTopList(company,Ifnew,Iffeatured){
     if(Ifnew){
         var new_li_styles ={
             "display":"inline-block",
-            "margin-left":"8px",
-            "padding-left":"10px",
+            /*"margin-left":"8px",*/
+            /*"padding-left":"10px",*/
+            "padding":"2px 5px",
             "color":"white",
             "background-color":"hsl(180, 8%, 52%)",
             "width":"3rem",
-            "border-radius":"9px"
+            /*"border-radius":"9px"*/
+            "border-radius":"15px",
+            "text-align":"center"
 
     
         };
@@ -364,12 +375,15 @@ function getTopList(company,Ifnew,Iffeatured){
 
         var feat_li_styles ={
             "display":"inline-block",
-            "margin-left":"8px",
-            "padding-left":"10px",
+            /*"margin-left":"8px",*/
+            /*"padding-left":"10px",*/
+            "padding":"2px 5px",
             "color":"white",
             "background-color":"black",
             "width":"6rem",
-            "border-radius":"9px"
+            /*"border-radius":"9px"*/
+            "border-radius":"15px",
+            "text-align":"center"
 
     
         };

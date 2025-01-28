@@ -37,6 +37,7 @@ body{
     padding:3rem 0;
     align-items:center;
 }
+#jobs-container>div{ padding:0 0.5rem; }
 
 #header_img{
     background-image:linear-gradient(45deg, hsla(180, 68%, 37%, 0.715),  hsla(180, 53%, 35%, 0.556)),url('./images/bg-header-desktop.svg') ;
@@ -52,4 +53,6 @@ body{
         width:100%;
         
     } 
+
+   
 }
